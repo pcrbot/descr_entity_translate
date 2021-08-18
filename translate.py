@@ -2,9 +2,8 @@ from nonebot import on_command, CommandSession
 from nonebot import permission as perm
 
 from hoshino import Service
-from hoshino.util import FreqLimiter, escape
-from hoshino.typing import CQEvent, MessageSegment
-from hoshino.util import pic2b64
+from hoshino.util  escape
+from hoshino.typing import CQEvent
 from datetime import datetime, timedelta
 import warnings
 import sys
@@ -49,6 +48,7 @@ def sconnect(q):
     salt = str(uuid.uuid1())
     signStr = APP_KEY + truncate(q) + salt + curtime + APP_SECRET
     sign = encrypt(signStr)
+    data['from'] = 'auto'
     data['appKey'] = APP_KEY
     data['q']=q
     data['salt'] = salt
@@ -74,30 +74,24 @@ def sconnect(q):
             
         return sss['basic']['explains']
 
-@sv.on_prefix('汉译英')
+@sv.on_prefix('翻译英')
 async def whois(bot, ev: CQEvent):
     q = escape(ev.message.extract_plain_text().strip())
-    data['from'] = 'zh-CHS'
     data['to'] = 'en'
     res=sconnect(q)
-    
     await bot.send(ev,(str)(res))
     
-@sv.on_prefix('英译汉')
+@sv.on_prefix('翻译中')
 async def whois(bot, ev: CQEvent):
     q = escape(ev.message.extract_plain_text().strip())
     data['to'] = 'zh-CHS'
-    data['from'] = 'en'
     res=sconnect(q)
-    
     await bot.send(ev,(str)(res))
     
-@sv.on_prefix('中译日')
+@sv.on_prefix('翻译日')
 async def whois(bot, ev: CQEvent):
     q = escape(ev.message.extract_plain_text().strip())
     data['to'] = 'ja'
-    data['from'] = 'zh-CHS'
     res=sconnect(q)
-    
     await bot.send(ev,(str)(res))
     

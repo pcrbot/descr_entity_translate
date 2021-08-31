@@ -1,8 +1,8 @@
 # -名词描述
-在 https://console.cloud.tencent.com/nlp/openconfirm 页面开通服务
-在 https://console.cloud.tencent.com/cam/capi 页面创建密钥
-在entity.py中填入你的SecretId和SecretKey
-把文件夹放入modules中并在__bot__.py中添加该插件
+在 https://console.cloud.tencent.com/nlp/openconfirm 页面开通服务-
+在 https://console.cloud.tencent.com/cam/capi 页面创建密钥-
+在entity.py中填入你的SecretId和SecretKey-
+把文件夹放入modules中并在__bot__.py中添加该插件-
 使用方法：
     什么是+名词
 

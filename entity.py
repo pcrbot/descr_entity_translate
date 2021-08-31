@@ -7,8 +7,8 @@ import base64
 import hmac
 
 
-secret_id = "AKID84kAJBn7ByUjhPq0tY1EBuNaYGjxwfAP"
-secret_key = "2pNfhU2LOCk36tQilY6QUIsCH7h17xYt"
+secret_id = ""
+secret_key = ""
 
 sv = Service('名词描述')
 def get_string_to_sign(method, endpoint, params):

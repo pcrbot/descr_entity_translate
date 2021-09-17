@@ -14,7 +14,7 @@ import time
 from importlib import reload
 
 import time
-sv = Service('translate')
+sv = Service('翻译')
 true="true"
 false="flse"
 reload(sys)

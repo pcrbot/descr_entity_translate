@@ -2,7 +2,7 @@ from nonebot import on_command, CommandSession
 from nonebot import permission as perm
 
 from hoshino import Service
-from hoshino.util  escape
+from hoshino.util  import escape
 from hoshino.typing import CQEvent
 from datetime import datetime, timedelta
 import warnings
